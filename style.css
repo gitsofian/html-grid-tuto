@@ -6,8 +6,8 @@ body{
 
 #grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
     gap: 10px;
     height: 600px;
     width: 80%;
@@ -26,7 +26,6 @@ body{
 
 .one{
     background-color: #f90;
-    grid-column: 1 / span 3;
 }
 
 .two{
@@ -36,22 +35,7 @@ body{
 }
 .three{
     background-color: #f96;
-    grid-column-start: 2;
-    grid-column-end: span 2;
 }
 .four{
     background-color: #fc6;
-    grid-row: 2 / span 2;
-}
-.five{
-    background-color: #fc9;
-}
-.six{
-    background-color: #f6f;
-}
-.seven{
-    background-color: #f9f;
-}
-.eigth{
-    background-color: #fcf;
 }
