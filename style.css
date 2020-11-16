@@ -5,80 +5,9 @@ body{
 }
 
 
-#container{
-    display:grid;
-    height: 100vh;
-    gap: 5px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-            "one one"
-            "two two"
-            "three three"
-            "four six"
-            "seven eight"
-            "nine nine";
-}
 
-.one{
-    background-color: #f0da50;
-    grid-area: one;
-}
-.two{
-    background-color: #e47c32;
-    grid-area: two;
-}
-.three{
-    background-color: #22d5f0;
-    grid-area: three;
-}
-.four{
-    background-color: #ee6da1;
-    grid-area: four;
-}
-.five{
-    background-color: #14b236;
-    grid-area: five;
-    display: none;
-}
-.six{
-    background-color: #1483d9;
-    grid-area: six;
-}
-.seven{
-    background-color: #09f1ad;
-    grid-area: seven;
-}
-.eight{
-    background-color: #c7f571;
-    grid-area: eight;
-}
-.nine{
-    background-color: #b2142e;
-    grid-area: nine;
-}
 
-#container div{
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-}
+@media screen and (min-width: 950px){
 
-@media screen and (min-width: 850px){
-    #container{
-        grid-template-columns: 1fr 2fr 1fr 1fr;
-        grid-template-areas: 
-                "one one one one"
-                "two three three three"
-                "two four four five"
-                "two six six five"
-                "seven seven eight eight"
-                "nine nine nine nine";
-    }
-    
-    .five{
-        display: block;
-    }
 
 }
