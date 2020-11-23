@@ -5,56 +5,82 @@ body{
     margin: 0;
     font-family: 'Goldman', cursive;
     font-size: 17px;
-
+    font-weight: bold;
 }
 #grid{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr 1fr 4fr 1fr;
-    row-gap: 5px;
-    grid-template-areas: 
-                    "header header"
-                    "nav nav"
-                    "section aside"
-                    "footer footer";
-
-
     height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(3, 1fr) 4fr 1fr;
+    grid-template-areas: 
+                "header header header "
+                "nav nav nav "
+                "info secondNav aside"
+                "info main aside"
+                "footer footer footer";
 
-}
-.text{
-    text-align: center;
 }
 header{
-    background-color: #28abb9;
+    background-color: #0c65a7;
     grid-area: header;
 }
 nav{
-    background-color: #2d6187;
+    background-color: #124b78;
     grid-area: nav;
 }
-section{
-    background-color: #a8dda8;
-    grid-area: section;
+#info{
+    background-color: #bdddf7;
+    grid-area: info;
+}
+#secondNav{
+    background-color: #ccccfc;
+    grid-area: secondNav;
+}
+#main{
+    background-color: #16a2c5;
+    grid-area: main;
 }
 aside{
-    background-color: #effad3;
+    background-color: #5275ad;
     grid-area: aside;
 }
 footer{
-    background-color: #28abb9;
+    background-color: #7ccce3;
     grid-area: footer;
 }
+.content{
+    text-align: center;
+    padding: 10px;
+}
 
-@media screen and (max-width: 959px){
+@media screen and (min-width: 690px) and (max-width: 950px){
+    #grid{
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: repeat(3, 1fr) 4fr repeat(2, 1f);
+        grid-template-areas: 
+                    "header header" 
+                    "nav nav "
+                    "info secondNav"
+                    "info main"
+                    "aside aside"
+                    "footer  footer";
+    
+    }
+}
+
+@media screen and (max-width: 690px){
     #grid{
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 4fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr) 4fr repeat(2, 1f);
         grid-template-areas: 
-                        "header"
-                        "section"
-                        "nav"
-                        "aside"
-                        "footer";
+                    "header" 
+                    "nav"
+                    "secondNav"
+                    "main"
+                    "aside"
+                    "footer";
+    }
+    #info{
+        display: none;
     }
 }
