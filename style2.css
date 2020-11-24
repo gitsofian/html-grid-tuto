@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Goldman', cursive;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#grid{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: 
+                "header"
+                "main"
+                "footer";
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+header{
+    background-color: #0c65a7;
+    grid-area: header;
+}
+#main{
+    background-color: #16a2c5;
+    grid-area: main;
+}
+#section1{
+    background-color: #5275ad;
+    grid-area: section1;
+    display: none;
+}
+#section2{
+    background-color: #5275ad;
+    grid-area: section2;
+    display: none;
+}
+#section3{
+    background-color: #5275ad;
+    grid-area: section3;
+    display: none;
+}
+footer{
+    background-color: #7ccce3;
+    grid-area: footer;
+}
+.content{
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (min-width: 680px) and (max-width: 959px){
+    #grid{
+        grid-template-columns: repeat(2, 1fr) ;
+        grid-template-rows: 1fr 4fr 1fr 1fr;
+        grid-template-areas: 
+                    "header header"
+                    "main main"
+                    "section1 section2"
+                    "footer footer";
+        row-gap: 10px;
+        column-gap: 10px;
+    
+    }
+    #section1{
+        display: block;
+    }
+    #section2{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 960px){
+    
+    #grid{
+        width: 90%;
+        margin: auto;
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: 1fr 4fr 1fr 1fr;
+        grid-template-areas: 
+                    "header header header"
+                    "main main main"
+                    "section1 section2 section3"
+                    "footer footer footer";
+        row-gap: 10px;
+        column-gap: 10px;
+    
+    }
+    #section1{
+        display: block;
+    }
+    #section2{
+        display: block;
+    }
+    #section3{
+        display: block;
+    }
+}
