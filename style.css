@@ -7,78 +7,62 @@ body{
     font-size: 17px;
     font-weight: bold;
 }
-#grid{
-    width: 90%;
-    margin: auto;
+#site{
+    width: 80%;
     height: 100vh;
+    margin: auto;
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    grid-template-rows: 1fr 4fr 1fr 1fr;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
     grid-template-areas: 
-                "header header header "
-                "main main main"
-                "section1 section2 section3"
-                "footer footer footer";
-    row-gap: 10px;
-    column-gap: 10px;
-
+                "header header"
+                "article nav"
+                "footer footer";
+    gap: 7px;
 }
 header{
-    background-color: #0c65a7;
+    background-color: rgb(202,15,15);
     grid-area: header;
+    display: flex;
+    justify-content: space-around;
 }
-#main{
-    background-color: #16a2c5;
-    grid-area: main;
+.fl{
+    background-color: yellow;
 }
-#section1{
-    background-color: #5275ad;
-    grid-area: section1;
+
+nav{
+    background-color: rgb(15,27,202);
+    grid-area: nav;
 }
-#section2{
-    background-color: #5275ad;
-    grid-area: section2;
-}
-#section3{
-    background-color: #5275ad;
-    grid-area: section3;
+article{
+    background-color: rgb(223,158,196);
+    grid-area: article;
 }
 footer{
-    background-color: #7ccce3;
+    background-color: rgb(25,200,78);
     grid-area: footer;
 }
-.content{
-    text-align: center;
-    padding: 10px;
-}
-
-@media screen and (min-width: 479px) and (max-width: 959px){
-    #grid{
-        width: 100%;
-        grid-template-columns: 2fr 2fr;
-        grid-template-rows: 1fr 4fr 1fr 1fr;
-        grid-template-areas: 
-                    "header header "
-                    "main main"
-                    "section1 section3"
-                    "footer footer";
-    }
-    #section2{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 690px){
-    #grid{
+@media screen and (max-width: 480px){
+    #site{
         width: 100%;
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 4fr 1fr; 
+        grid-template-areas: 
+                    "header"
+                    "nav"
+                    "article"
+                    "footer";
+    }    
+}
+
+@media screen and (min-width:481px) and (max-width: 899px){
+    #site{
+        width: 75%;
+        grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr 4fr 1fr;
         grid-template-areas: 
-                    "header "
-                    "main"
-                    "footer";
-    }
-    #section1, #section2, #section3{
-        display: none;
-    }
+                    "header header"
+                    "nav article"
+                    "footer footer";
+    }    
 }
